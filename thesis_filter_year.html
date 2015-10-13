@@ -13,31 +13,22 @@
 	<body>
 		<!-- *******************HEADER ******************-->
 		<h1>THESIS CRUD APPLICATION</h1>
-		<a href='/thesis/create'>Return to Thesis Crud Application</a>
+		<a href='/thesis/create' class='btn btn-primary btn-m'>Return to Thesis Crud Application</a>
 		<hr>
 		<div>
 			<h3>Welcome to Thesis Crud Application Filter by Year!</h3>
 		</div>
-		<div>
-			<form action='/thesis/year' method='post'>
-				<div>
-					<label>Year:</label>
-					<select name='thesis_filter_year'>
-						<option>2011</option>
-						<option>2012</option>
-						<option>2013</option>
-						<option>2014</option>
-					</select>
-				</div>
-				<div>
-					<input type='submit' value='Submit'>
-				</div>
-			<div>
-				{% for filtering in filter_list %}
-					<p>{{filtering.thesis_filter_year}}</p>
-					<a href='/thesis/list/{{filtering.thesis_filter_year}}'>CLICK HERE</a>
-				{% endfor%}
-			</div>
+		<div class= 'col-sm-1'>
+			<a href ='/thesis/list/2011' class='btn btn-primary btn-m' role='button'>2011</a>
+		</div>
+		<div class= 'col-sm-1'>
+			<a href ='/thesis/list/2012' class='btn btn-primary btn-m' role='button'>2012</a>
+		</div>
+		<div class= 'col-sm-1'>
+			<a href ='/thesis/list/2013' class='btn btn-primary btn-m' role='button'>2013</a>
+		</div>
+		<div class= 'col-sm-1'>
+			<a href ='/thesis/list/2014' class='btn btn-primary btn-m' role='button'>2014</a>
 		</div>
 	</body>
 </html>

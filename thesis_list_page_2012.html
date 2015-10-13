@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<h1>Thesis List</h1>
-		<a href='/thesis/create'>Return to Thesis Crud App</a>
+		<a href='/thesis/year' class='btn btn-primary btn-m' role='button'>Return</a>
 		<hr>
 		<h3>Thesis Database</h3>
    
@@ -36,7 +36,7 @@
 					<td>Member5</td>
 					<td>Single Information</td>
 				</tr>
-			{% for i in query_year %}
+			{% for thesis in thesis_list %}
 				<tr class='thesis_table1'>
 					<td>{{thesis.thesis_university}}</td> 
 					<td>{{thesis.thesis_college}}</td>

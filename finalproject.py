@@ -244,14 +244,42 @@ class ThesisFilterYear(webapp2.RequestHandler):
 		filter_year.thesis_filter_year=self.request.get('thesis_filter_year')
 		filter_year.put()
 		self.redirect('/thesis/year')
-class ThesisListPage2012(webapp2.RequestHandler):
-	def get(self,yearlist):
-		thesis=Thesis.query().order(-Faculty.date).fetch()
-		year='2012'
-		query_year=thesis.filter(Thesis.yearlist==year)
-		# year=self.request.get('thesis_filter_year')
+class ThesisListPage2011(webapp2.RequestHandler):
+	def get(self):
+		thesis=Thesis.query(Thesis.yearlist=='2011').order(-Thesis.yearlist).fetch()
+		logging.info(thesis)
+		template_data={
+			'thesis_list':thesis
+		}
 		template = JINJA_ENVIRONMENT.get_template('thesis_list_page_2012.html')
-		self.response.write(template.render())
+		self.response.write(template.render(template_data))
+class ThesisListPage2012(webapp2.RequestHandler):
+	def get(self):
+		thesis=Thesis.query(Thesis.yearlist=='2012').order(-Thesis.yearlist).fetch()
+		logging.info(thesis)
+		template_data={
+			'thesis_list':thesis
+		}
+		template = JINJA_ENVIRONMENT.get_template('thesis_list_page_2012.html')
+		self.response.write(template.render(template_data))
+class ThesisListPage2013(webapp2.RequestHandler):
+	def get(self):
+		thesis=Thesis.query(Thesis.yearlist=='2013').order(-Thesis.yearlist).fetch()
+		logging.info(thesis)
+		template_data={
+			'thesis_list':thesis
+		}
+		template = JINJA_ENVIRONMENT.get_template('thesis_list_page_2012.html')
+		self.response.write(template.render(template_data))
+class ThesisListPage2014(webapp2.RequestHandler):
+	def get(self):
+		thesis=Thesis.query(Thesis.yearlist=='2014').order(-Thesis.yearlist).fetch()
+		logging.info(thesis)
+		template_data={
+			'thesis_list':thesis
+		}
+		template = JINJA_ENVIRONMENT.get_template('thesis_list_page_2012.html')
+		self.response.write(template.render(template_data))
 
 class FacultyInformation(webapp2.RequestHandler):
 	def get(self,faculty_id):
@@ -469,7 +497,10 @@ app = webapp2.WSGIApplication([
 	('/thesis/year',ThesisFilterYear),
 	# ('/thesis/list(.*)', ThesisFilterInformation),
 	('/thesis/list/all', ThesisListPage),
+	('/thesis/list/2011', ThesisListPage2011),
 	('/thesis/list/2012', ThesisListPage2012),
+	('/thesis/list/2013', ThesisListPage2013),
+	('/thesis/list/2014', ThesisListPage2014),
 	('/thesis/(.*)', ThesisInformation),
 	('/faculty/create', FacultyPage),
 	('/faculty/create/completed', FacultyCreated),
