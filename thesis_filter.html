@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="scripts/nav.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+		<title>Thesis Filter</title>
+	</head>
+	<body>
+		<!-- *******************HEADER ******************-->
+		<h1>THESIS CRUD APPLICATION</h1>
+		<div class="col-sm-11">
+			<a href='/thesis/create' class='btn btn-primary btn-sm' role='button'>Return to Thesis Crud Application</a>
+		</div>
+		<div class='col-sm-1'>
+			<a href='{{logout_url}}' id='logout' class='btn btn-danger btn-sm' role='button'>Log-Out</a>
+		</div>
+		<br>
+		<hr>
+		<div>
+			<h3>Welcome to Thesis Crud Application Filter!</h3>
+		</div>
+		<div class='none'>
+			<p>Click your desired link below:</p>
+			<div class='col-sm-3'>
+				<a href='/thesis/list/all' class='btn btn-primary btn-sm' role='button'>Filter ALL</a>
+			</div>
+			<div class='col-sm-3'>
+				<a href='#' class='btn btn-danger btn-sm' role='button'>Filter by Year(On Going)</a>
+			</div>
+			<div class='col-sm-3'>
+				<a href='#' class='btn btn-danger btn-sm' role='button'>Filter by University(On Going)</a>
+			</div>
+			<div class='col-sm-3'>
+				<a href='#' class='btn btn-danger btn-sm' role='button'>Filter by Adviser(On Going)</a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>Student List</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="scripts/nav.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+	</head>
+	<body>
+		<h1>Student Info</h1>
+		<a href='/student/create' class='btn btn-primary btn-sm' role='button'>Return to Student Crud App</a>
+		<hr>
+		<h3>Student's Data</h3>
+   
+    <!-- ******************* TABLE LIST ******************-->
+		<div class='formcss'>
+			<form action='/student/{{student_list.key.id()}}' method='post'>
+			<div>
+				<label>First Name:</label>
+				<input type='text' name='first_name' value='{{student_list.first_name}}' placeholder='first name'readonly>
+			</div>
+			<div>
+				<label>Last Name:</label>
+				<input type='text' name='last_name' value='{{student_list.last_name}}' placeholder='last name'readonly>
+			</div>
+			<div>
+				<label>Email:</label>
+				<input type='text' name='email' value='{{student_list.email}}' placeholder='email'readonly>
+			</div>
+			<div>
+				<label>Phone Number:</label>
+				<input type='text' name='phone_number' value='{{student_list.phone_number}}' placeholder='phone number'readonly>
+			</div>
+			<div>
+				<label>Student Number:</label>
+				<input type='text' name='student_number' value='{{student_list.student_number}}' placeholder='student number'readonly>
+			</div>
+			<div>
+				<label>Birthdate:</label>
+				<input type='text' name='birthdate' value='{{student_list.birthdate}}' placeholder='birthdate'readonly>
+			</div>
+			<div>
+				<label>Picture:</label>
+				<input type='text' name='picture' value='{{student_list.picture}}' placeholder='picture'readonly>
+			</div>
+			<div>
+				<label>Year Graduated:</label>
+				<input type='text' name='year_graduated' value='{{student_list.year_graduated}}' placeholder='year graduated'readonly>
+			</div>
+		</div>
+
+    <!-- ******************* FOOTER ******************-->
+		<div class='footer'>
+			<p>Developers: Ralph T. Llaguno and Athanasios Adrian S. Go</p>
+			<p>Powered by Google App Engine</p>
+		</div>
+	</body>
+</html>

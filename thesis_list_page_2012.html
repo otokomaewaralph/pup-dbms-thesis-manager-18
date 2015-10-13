@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>Thesis List</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="scripts/nav.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+	</head>
+	<body>
+		<h1>Thesis List</h1>
+		<a href='/thesis/create'>Return to Thesis Crud App</a>
+		<hr>
+		<h3>Thesis Database</h3>
+   
+    <!-- ******************* TABLE LIST ******************-->
+		<div class='thesis_data'>
+			<table>
+				<tr class='thesis_table'>
+					<td>University</td>
+					<td>College</td>
+					<td>Department</td>
+					<td>Year</td>
+					<td>Title</td>
+					<td>Abstract</td>
+					<td>Section</td>
+					<td>Adviser</td>
+					<td>Member1</td>
+					<td>Member2</td>
+					<td>Member3</td>
+					<td>Member4</td>
+					<td>Member5</td>
+					<td>Single Information</td>
+				</tr>
+			{% for i in query_year %}
+				<tr class='thesis_table1'>
+					<td>{{thesis.thesis_university}}</td> 
+					<td>{{thesis.thesis_college}}</td>
+					<td>{{thesis.thesis_department}}</td>
+					<td>{{thesis.yearlist}}</td>
+					<td>{{thesis.thesis_title}}</td>
+					<td>{{thesis.thesis_abstract}}</td>
+					<td>{{thesis.section}}</td>
+					<td>{{thesis.thesis_adviser}}</td>
+					<td>{{thesis.thesis_member1}}</td>
+					<td>{{thesis.thesis_member2}}</td>
+					<td>{{thesis.thesis_member3}}</td>
+					<td>{{thesis.thesis_member4}}</td>
+					<td>{{thesis.thesis_member5}}</td>
+					<td><a href='/thesis/{{thesis.key.id()}}'> More details</a></td>
+				</tr>
+			{% endfor %}
+			</table>
+		</div>
+
+    <!-- ******************* FOOTER ******************-->
+		<div class='footer'>
+			<p>Developers: Ralph T. Llaguno and Athanasios Adrian S. Go</p>
+			<p>Powered by Google App Engine</p>
+		</div>
+	</body>
+</html>

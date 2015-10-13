@@ -1,0 +1,155 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script> 
+		<!--<script src="scripts/nav.js"></script>-->
+		<title>Thesis Page</title>
+	</head>
+	<body>
+	<!-- *******************HEADER ******************-->
+		<h1>THESIS CRUD APPLICATION</h1>
+		<div class="col-sm-11">
+			<a href='/thesis/filter' class="btn btn-primary btn-sm" role="button">Thesis Filter</a>
+			<a href='/thesis/import/completed' class="btn btn-primary btn-sm" role="button">Import CSV</a>
+		</div>
+		<div class="col-sm-1">
+			<a href='{{logout_url}}' id="thesislogout" class="btn btn-danger btn-sm" role="button">Log-Out</a>
+		</div>
+		<br>
+		<hr>
+		<div>
+			<h3 class="header">Welcome to Thesis Crud Application!</h3>
+		</div>
+		<!-- *******************NAV BAR ******************-->
+		<div id='cssmenu'>
+			<ul>
+				<li><a href='/mainpage'><span>HOME</span></a></li>
+				<li class='active'><a href='/thesis/create'><span>THESIS CRUD</span></a></li>
+				<li><a href='/faculty/create'><span>FACULTY CRUD</span></a></li>
+				<li><a href='/student/create'><span>STUDENT CRUD</span></a></li>
+				<li><a href='/university/create'><span>UNIVERSITY CRUD</span></a></li>
+				<li><a href='/college/create'><span>COLLEGE CRUD</span></a></li>
+				<li><a href='/department/create'><span>DEPARTMENT CRUD</span></a></li>
+				<li><a href='/search'><span>SEARCH</span></a></li>
+			</ul>
+		</div>
+		<!-- *******************FORM******************-->
+		
+		<div class='container'>
+		<h3>Thesis Form Application</h3>
+		<form method='post'>
+			<div class="form-group">
+				<label class="control-label col-sm-2">Year</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"role="button"name='yearlist'>
+						<option>2011</option>
+						<option>2012</option>
+						<option>2013</option>
+						<option>2014</option>
+						<option>2015</option>
+					</select>
+				</div>	
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2">Title</label>
+				<div style="padding:10px;" class="col-sm-10">
+					<input type='text' class="form-control" name='thesis_title' placeholder='Thesis Title' required>
+				</div>
+			</div>	
+			
+			<div class="form-group">
+				<label class="control-label col-sm-2">Abstract:</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<textarea type='text' class="form-control" name='thesis_abstract' placeholder='Abstract'></textarea>
+				</div>
+			</div>	
+
+				
+				<label class="control-label col-sm-2">Adviser</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<input type='text' class="form-control"name='thesis_adviser' placeholder='Name of adviser' required>
+				</div>
+				
+				<label class="control-label col-sm-2">Section</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"role="button" name='section'>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+				
+				<label class="control-label col-sm-2">University</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<input type='text' class="form-control"name='thesis_university' placeholder='Name of university' required>
+				</div>
+				
+
+				<label class="control-label col-sm-2">College</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<input type='text' class="form-control"name='thesis_college' placeholder='Name of college' required>
+				</div>
+				
+				<label class="control-label col-sm-2">Department</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<input type='text' class="form-control"name='thesis_department' placeholder='Name of department' required>
+				</div>
+				
+				<label class="control-label col-sm-2">Member1</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<input type='text' class="form-control"name='thesis_member1' placeholder='Name of member' required>
+				</div>
+				
+				<label class="control-label col-sm-2">Member2:</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<input type='text' class="form-control"name='thesis_member2' placeholder='Name of member' required>
+				</div>
+				
+				<label class="control-label col-sm-2">Member3:</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<input type='text' class="form-control"name='thesis_member3' placeholder='Name of member' required>
+				</div>
+				
+				<label class="control-label col-sm-2">Member4:</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<input type='text' class="form-control"name='thesis_member4' placeholder='Name of member' required>
+				</div>
+				
+				<label class="control-label col-sm-2">Member5:</label>
+				<div style="padding:10px;"class="col-sm-10">
+					<input type='text' class="form-control"name='thesis_member5' placeholder='Name of member' required>
+				</div>
+				<div style="padding:10px;" class="col-sm-offset-2 col-sm-10">
+					<input type='submit' class="btn btn-success" value='Submit'>
+				</div>
+			</form>
+		</div>
+		<!-- ******************* COMMENT SECTION ******************-->
+		<script src="https://apis.google.com/js/plusone.js"></script>
+		<div id='comment_div'>
+			<div id="comments"></div>
+				<script>
+					gapi.comments.render('comments', {
+					href: window.location,
+					width: '1200',
+					first_party_property: 'BLOGGER',
+					view_type: 'FILTERED_POSTMOD'
+					});
+				</script>
+		</div>
+		<!-- ******************* FOOTER ******************-->
+		<div class='footer'>
+			<p>Developers: Ralph T. Llaguno and Athanasios Adrian S. Go</p>
+			<p>Powered by Google App Engine</p>
+		</div>
+	</body>
+</html>

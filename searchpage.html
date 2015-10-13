@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="scripts/nav.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/style.css"> 
+	</head>
+	<body>
+		<h1>Search for Thesis</h1>
+		<a href='/thesis/create' class='btn btn-primary btn-sm' role='button'>Return to Thesis Crud App</a>
+		<hr>
+		<h3 id='searchbar'>Search the Database for thesis titles or students:</h3>
+   
+    <!-- ******************* TABLE LIST ******************-->
+		<div class='thesis_data' id='list'>
+			<table>
+				<tr class='thesis_table'>
+					<th>University</th>
+					<th>College</th>
+					<th>Department</th>
+					<th>Year</th>
+					<th>Title</th>
+					<th>Section</th>
+					<th>Adviser</th>
+					<th>Member1</th>
+					<th>Member2</th>
+					<th>Member3</th>
+					<th>Member4</th>
+					<th>Member5</th>
+					<th>Single Information</th>
+				</tr>
+			{% for thesis in thesis_list %}
+				<tr class='thesis_table1'>
+					<td>{{thesis.thesis_university}}</td> 
+					<td>{{thesis.thesis_college}}</td>
+					<td>{{thesis.thesis_department}}</td>
+					<td>{{thesis.yearlist}}</td>
+					<td class="basta">{{thesis.thesis_title}}</td>
+					<td>{{thesis.section}}</td>
+					<td>{{thesis.thesis_adviser}}</td>
+					<td class="basta">{{thesis.thesis_member1}}</td>
+					<td class="basta">{{thesis.thesis_member2}}</td>
+					<td class="basta">{{thesis.thesis_member3}}</td>
+					<td class="basta">{{thesis.thesis_member4}}</td>
+					<td class="basta">{{thesis.thesis_member5}}</td>
+					<td><a href='/thesis/{{thesis.key.id()}}'> More details</a></td>
+				</tr>
+			{% endfor %}
+			</table>
+		</div>
+
+    <!-- ******************* FOOTER ******************-->
+		<div class='footer'>
+			<p>Developers: Ralph T. Llaguno and Athanasios Adrian S. Go</p>
+			<p>Powered by Google App Engine</p>
+		</div>
+
+    <!-- ******************* SEARCH SCRIPT ******************-->
+		<script> 
+		(function ($) {
+		  jQuery.expr[':'].Contains = function(a,i,m){
+			  return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+		  };
+		 
+		  function listFilter(header, list) {
+			var form = $("<form>").attr({"class":"filterform","action":"#"}),
+				input = $("<input>").attr({"class":"filterinput","type":"text","placeholder":"Enter a thesis's title or a proponent's name here...","autofocus":"yes"});
+			$(form).append(input).appendTo(header);
+		 
+			$(input)
+			  .change( function () {
+				var filter = $(this).val();
+				if(filter) {
+				  $(list).find(".basta:not(:Contains(" + filter + "))").parent().slideUp();
+				  $(list).find(".basta:Contains(" + filter + ")").parent().slideDown();
+				} else {
+				  $(list).find("tr").slideDown();
+				}
+				return false;
+			  })
+			.keyup( function () {
+				$(this).change();
+			});
+		  }
+		
+		  $(function () {
+			listFilter($("#searchbar"), $("#list"));
+		  });
+		}(jQuery));
+		</script> 
+	</body>
+</html>

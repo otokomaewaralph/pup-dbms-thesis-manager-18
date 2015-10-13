@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>Faculty List</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="scripts/nav.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+	</head>
+	<body>
+		<h1>Faculty Info</h1>
+		<a href='/faculty/create' class='btn btn-primary btn-sm' role='button'>Return to Faculty Crud App</a>
+		<hr>
+		<h3>Faculty's Data</h3>
+   
+    <!-- ******************* TABLE LIST ******************-->
+		<div class='formcss'>
+			<form action='/faculty/{{faculty_list.key.id()}}' method='post'>
+			<div>
+				<label>Title:</label>
+				<input type='text' name='title' value='{{faculty_list.first_name}}' placeholder='first name'readonly>
+			</div>
+			<div>
+				<label>First Name:</label>
+				<input type='text' name='first_name' value='{{faculty_list.first_name}}' placeholder='first name'readonly>
+			</div>
+			<div>
+				<label>Last Name:</label>
+				<input type='text' name='last_name' value='{{faculty_list.last_name}}' placeholder='last name'readonly>
+			</div>
+			<div>
+				<label>Email:</label>
+				<input type='text' name='email' value='{{faculty_list.email}}' placeholder='email'readonly>
+			</div>
+			<div>
+				<label>Phone Number:</label>
+				<input type='text' name='phone_number' value='{{faculty_list.phone_number}}' placeholder='phone number'readonly>
+			</div>
+			<div>
+				<label>Birthdate:</label>
+				<input type='text' name='birthdate' value='{{faculty_list.birthdate}}' placeholder='birthdate'readonly>
+			</div>
+			<div>
+				<label>Picture:</label>
+				<input type='text' name='picture' value='{{faculty_list.picture}}' placeholder='picture'readonly>
+			</div>
+		</div>
+
+    <!-- ******************* FOOTER ******************-->
+		<div class='footer'>
+			<p>Developers: Ralph T. Llaguno and Athanasios Adrian S. Go</p>
+			<p>Powered by Google App Engine</p>
+		</div>
+	</body>
+</html>

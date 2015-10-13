@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>University List</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="scripts/nav.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+	</head>
+	<body>
+		<h1>University Info</h1>
+		<a href='/university/create' class='btn btn-primary btn-sm' role='button'>Return to University Crud App</a>
+		<hr>
+		<h3>University's Data</h3>
+   
+    <!-- ******************* TABLE LIST ******************-->
+		<div class='formcss'>
+			<form action='/university/{{university_list.key.id()}}' method='post'>
+			<div>
+				<label>University Name:</label>
+				<input type='text' name='name' value='{{university_list.name}}' placeholder='University name'readonly>
+			</div>
+			<div>
+				<label>Address:</label>
+				<input type='text' name='address' value='{{university_list.address}}' placeholder='Address'readonly>
+			</div>
+			<div>
+				<label>Initial:</label>
+				<input type='text' name='initial' value='{{university_list.initial}}' placeholder='Initial'readonly>
+			</div>
+		</div>
+
+    <!-- ******************* FOOTER ******************-->
+		<div class='footer'>
+			<p>Developers: Ralph T. Llaguno and Athanasios Adrian S. Go</p>
+			<p>Powered by Google App Engine</p>
+		</div>
+	</body>
+</html>

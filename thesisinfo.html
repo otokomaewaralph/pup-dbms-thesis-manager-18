@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>Thesis List</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="scripts/nav.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+	</head>
+	<body>
+		<h1>Thesis Info</h1>
+		<a href='/thesis/create' class='btn btn-primary btn-sm' role='button'>Return to Thesis Crud App</a>
+		<hr>
+		<h3>Thesis's Data</h3>
+   
+    <!-- ******************* TABLE LIST ******************-->
+		<div class='formcss'>
+			<form method='post'>
+				<div>
+					<label>Year:</label>
+					<input type='text' name='yearlist' placeholder='Year' value='{{thesis_list.yearlist}}' readonly>
+				</div>
+				<div>
+					<label>Title:</label>
+					<input type='text' name='thesis_title' value='{{thesis_list.thesis_title}}' placeholder='Not applicable' readonly>
+				</div>
+				<div>
+					<label>Abstract:</label>
+					<textarea readonly type='text' name='thesis_abstract'  placeholder='Abstract'>{{thesis_list.thesis_abstract}}</textarea>
+				</div>
+				<div>
+					<label>Adviser:</label>
+					<input type='text' name='thesis_adviser' value='{{thesis_list.thesis_adviser}}' placeholder='Not applicable' readonly>
+				</div>
+				<div>
+					<label>Section:</label>
+					<input type='text' name='section' value='{{thesis_list.section}}' placeholder='Not applicable' readonly>
+				</div>
+				<div>
+					<label>University:</label>
+					<input type='text' name='thesis_university' value='{{thesis_list.thesis_university}}' placeholder='Not applicable' readonly>
+				</div>
+				<div>
+					<label>College:</label>
+					<input type='text' name='thesis_college' value='{{thesis_list.thesis_college}}' placeholder='Not applicable' readonly>
+				</div>
+				<div>
+					<label>Department:</label>
+					<input type='text' name='thesis_department' value='{{thesis_list.thesis_department}}' placeholder='Not applicable' readonly>
+				</div>
+				<div>
+					<label>Member1:</label>
+					<input type='text' name='thesis_member1' value='{{thesis_list.thesis_member1}}' placeholder='Not applicable	' readonly>
+				</div>
+				<div>
+					<label>Member2:</label>
+					<input type='text' name='thesis_member2' value='{{thesis_list.thesis_member2}}' placeholder='Not applicable' readonly>
+				</div>
+				<div>
+					<label>Member3:</label>
+					<input type='text' name='thesis_member3' value='{{thesis_list.thesis_member3}}' placeholder='Not applicable' readonly>
+				</div>
+				<div>
+					<label>Member4:</label>
+					<input type='text' name='thesis_member4' value='{{thesis_list.thesis_member4}}' placeholder='Not applicable' readonly>
+				</div>
+				<div>
+					<label>Member5:</label>
+					<input type='text' name='thesis_member5' value='{{thesis_list.thesis_member5}}' placeholder='Not applicable' readonly>
+				</div>
+		</div>
+
+    <!-- ******************* FOOTER ******************-->
+		<div class='footer'>
+			<p>Developers: Ralph T. Llaguno and Athanasios Adrian S. Go</p>
+			<p>Powered by Google App Engine</p>
+		</div>
+	</body>
+</html>

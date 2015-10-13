@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>College List</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="scripts/nav.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+	</head>
+	<body>
+		<h1>College Info</h1>
+		<a href='/college/create' class='btn btn-primary btn-sm' role='button'>Return to College Crud App</a>
+		<hr>
+		<h3>College's Data</h3>
+   
+    <!-- ******************* TABLE LIST ******************-->
+		<div class='formcss'>
+			<form action='/college/{{college_list.key.id()}}' method='post'>
+			<div>
+				<label>College Name:</label>
+				<input type='text' name='name' value='{{college_list.name}}' placeholder='College name'readonly>
+			</div>
+			<div>
+				<label>Departments:</label>
+				<input type='text' name='departments' value='{{college_list.departments}}' placeholder='Departments'readonly>
+			</div>
+		</div>
+
+    <!-- ******************* FOOTER ******************-->
+		<div class='footer'>
+			<p>Developers: Ralph T. Llaguno and Athanasios Adrian S. Go</p>
+			<p>Powered by Google App Engine</p>
+		</div>
+	</body>
+</html>
